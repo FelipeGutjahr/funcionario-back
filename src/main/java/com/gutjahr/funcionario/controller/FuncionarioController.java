@@ -18,6 +18,7 @@ public class FuncionarioController {
     @PostMapping("/salvar")
     public ResponseDTO salvar(@Valid @RequestBody Funcionario funcionario, ResponseDTO response) {
         service.salvar(funcionario);
+        response.setResult(funcionario.getId());
         return response.setMessage("Funcionário salvo com sucesso");
     }
 
